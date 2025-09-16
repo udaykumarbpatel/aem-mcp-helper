@@ -1,0 +1,11 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-use.model="com.yourcompany.core.models.ChatComponentModel" />
+<sly data-sly-call="${clientlib.all @ categories='aem-mcp-initialyzer.chat'}" />
+
+<div class="chat-component" data-chat-endpoint="${model.servletPath}" data-component-id="${model.componentId}">
+    <label class="chat-component__label" for="${model.componentId}-prompt">${model.promptLabel}</label>
+    <textarea class="chat-component__prompt" id="${model.componentId}-prompt"
+        placeholder="${model.promptPlaceholder}" rows="4"></textarea>
+    <button class="chat-component__button" type="button">${model.buttonText}</button>
+    <div class="chat-component__response" role="status" aria-live="polite"></div>
+</div>
